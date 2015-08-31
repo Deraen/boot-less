@@ -8,7 +8,7 @@
    [boot.tmpdir     :as tmpd]))
 
 (def ^:private deps
-  '[[deraen/less4clj "0.3.2"]])
+  '[[deraen/less4clj "0.3.3"]])
 
 (defn- find-mainfiles [fs]
   (->> fs
@@ -40,7 +40,8 @@
                 ~(.getPath output-dir)
                 ~(tmpd/path f)
                 {:source-map ~source-map
-                 :compression ~compression})))))
+                 :compression ~compression
+                 :verbosity ~(deref util/*verbosity*)})))))
         (-> fileset
             (core/add-resource output-dir)
             core/commit!))))

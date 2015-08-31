@@ -1,3 +1,7 @@
+## 0.4.2 (31.8.2015)
+
+- Use latest less4clj
+
 ## 0.4.1 (16.8.2015)
 
 - Use latest less4clj (less4j 1.14.0)
