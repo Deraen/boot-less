@@ -8,7 +8,7 @@
    [boot.tmpdir     :as tmpd]))
 
 (def ^:private deps
-  '[[deraen/less4clj "0.3.3"]])
+  '[[deraen/less4clj "0.3.3-SNAPSHOT"]])
 
 (defn- find-mainfiles [fs]
   (->> fs
@@ -17,8 +17,9 @@
 
 (core/deftask less
   "Compile Less code."
-  [s source-map  bool "Create source-map for compiled CSS."
-   c compression bool "Compress compiled CSS using simple compression."]
+  [s source-map        bool "Create source-map for compiled CSS."
+   c compression       bool "Compress compiled CSS using simple compression."
+   j inline-javascript bool "Allow for inline javascript in LESS"]
   (let [output-dir  (core/tmp-dir!)
         p           (-> (core/get-env)
                         (update-in [:dependencies] into deps)
@@ -41,6 +42,7 @@
                 ~(tmpd/path f)
                 {:source-map ~source-map
                  :compression ~compression
+                 :inline-javascript ~inline-javascript
                  :verbosity ~(deref util/*verbosity*)})))))
         (-> fileset
             (core/add-resource output-dir)
