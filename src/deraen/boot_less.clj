@@ -4,8 +4,7 @@
    [clojure.java.io :as io]
    [boot.pod        :as pod]
    [boot.core       :as core]
-   [boot.util       :as util]
-   [boot.tmpdir     :as tmpd]))
+   [boot.util       :as util]))
 
 (def ^:private deps
   '[[deraen/less4clj "0.3.3"]])
@@ -36,9 +35,9 @@
           (doseq [f (find-mainfiles fileset)]
             (pod/with-call-in @p
               (less4clj.core/less-compile-to-file
-                ~(.getPath (tmpd/file f))
+                ~(.getPath (core/tmp-file f))
                 ~(.getPath output-dir)
-                ~(tmpd/path f)
+                ~(core/tmp-path f)
                 {:source-map ~source-map
                  :compression ~compression
                  :verbosity ~(deref util/*verbosity*)})))))
