@@ -5,7 +5,7 @@
 
 * Provides the `less` task
 * For each `.main.less` in fileset creates equivalent `.css` file.
-* Uses [Less4j](https://github.com/SomMeri/less4j) Java implementation of Less compiler
+* Uses [Less4j](https://github.com/SomMeri/less4j) Java implementation of Less compiler through [less4clj clojure wrapper](https://github.com/Deraen/less4clj)
 * For parallel leiningen plugin check [less-less4j](https://github.com/Deraen/lein-less4j/)
 
 ## Usage
