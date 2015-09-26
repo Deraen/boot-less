@@ -1,3 +1,3 @@
 # Contributing
 
-Please check [less4cl issues](https://github.com/Deraen/less4clj) first
+Please check [less4clj issues](https://github.com/Deraen/less4clj) first
