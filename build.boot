@@ -2,9 +2,9 @@
   :resource-paths #{"src"}
   :dependencies   '[[org.clojure/clojure "1.6.0"       :scope "provided"]
                     [boot/core           "2.5.2"       :scope "provided"]
-                    [deraen/less4clj     "0.3.3"       :scope "test"]])
+                    [deraen/less4clj     "0.4.0"       :scope "test"]])
 
-(def +version+ "0.4.2")
+(def +version+ "0.4.3")
 
 (task-options!
   pom {:project     'deraen/boot-less

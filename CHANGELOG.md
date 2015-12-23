@@ -1,3 +1,7 @@
+## 0.4.3
+
+- Use [less4clj 0.4.0](https://github.com/Deraen/less4clj/blob/master/CHANGELOG.md#040-23122015)
+
 ## 0.4.2 (31.8.2015)
 
 - Use latest less4clj

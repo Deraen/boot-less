@@ -17,7 +17,8 @@
 (core/deftask less
   "Compile Less code."
   [s source-map  bool "Create source-map for compiled CSS."
-   c compression bool "Compress compiled CSS using simple compression."]
+   c compression bool "Compress compiled CSS using simple compression."
+   i inline-javascript bool "Enable inline Javascript plugin"]
   (let [output-dir  (core/tmp-dir!)
         p           (-> (core/get-env)
                         (update-in [:dependencies] into deps)
@@ -40,6 +41,7 @@
                 ~(core/tmp-path f)
                 {:source-map ~source-map
                  :compression ~compression
+                 :inline-javascript ~inline-javascript
                  :verbosity ~(deref util/*verbosity*)})))))
         (-> fileset
             (core/add-resource output-dir)
