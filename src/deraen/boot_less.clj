@@ -7,7 +7,7 @@
    [boot.util       :as util]))
 
 (def ^:private deps
-  '[[deraen/less4clj "0.3.3"]])
+  '[[deraen/less4clj "0.4.1"]])
 
 (defn- find-mainfiles [fs]
   (->> fs
