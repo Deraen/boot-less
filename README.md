@@ -38,7 +38,23 @@ To create css file `public/css/main.css` have the less file on path `public/css/
 
 ### Log configuration
 
-If you are using some logging stuff it might be that library used by
+If you don't have any slf4j implementations you will see a warning:
+
+```
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+```
+
+To disable this add a no operation logger to your project. As this is only required
+on build phase, you can use `:scope "test"` so that the dependency is not
+transitive and is not included in uberjar.
+
+```
+[org.slf4j/slf4j-nop "1.7.13" :scope "test"]
+```
+
+If you are using slf4j logging it might be that a library used by
 less4j will write lots of stuff to your log, then you should add the following
 rule to your `logback.xml`:
 
